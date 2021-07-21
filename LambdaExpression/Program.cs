@@ -11,6 +11,7 @@ namespace LambdaExpression
             List<Person> list = new List<Person>();
             AddingPersonDetails(list);
             RetrieveTopTwoLessThanSixty(list);
+            RetrieveTeenageRecords(list);
         }
 
         /// <summary>
@@ -50,6 +51,20 @@ namespace LambdaExpression
             }
             Console.WriteLine("\nRetrieving the top 2 records from the list whose age is less than sixty");
             var result = order.Take(2);
+            foreach (Person person in result)
+            {
+                Console.WriteLine("SSN : {0}\tName : {1}\tAddress : {2}\tAge : {3}", person.SSN, person.Name, person.Address, person.Age);
+            }
+        }
+
+        /// <summary>
+        /// UC 3 - Retreieve all records whose age is between 13 to 18
+        /// </summary>
+        /// <param name="list"></param>
+        public static void RetrieveTeenageRecords(List<Person> list)
+        {
+            Console.WriteLine("\nDisplay records from the list whose age is between 13 to 18");
+            var result = list.FindAll(p => p.Age > 13 && p.Age < 18).OrderBy(x=>x.Age).ToList();
             foreach (Person person in result)
             {
                 Console.WriteLine("SSN : {0}\tName : {1}\tAddress : {2}\tAge : {3}", person.SSN, person.Name, person.Address, person.Age);
