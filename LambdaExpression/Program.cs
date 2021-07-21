@@ -11,6 +11,7 @@ namespace LambdaExpression
             List<Person> list = new List<Person>();
             AddingPersonDetails(list);
         }
+
         /// <summary>
         /// UC 1 - Adding Person Details
         /// </summary>
@@ -27,6 +28,5 @@ namespace LambdaExpression
                 Console.WriteLine("SSN : {0}\tName : {1}\tAddress : {2}\tAge : {3}", person.SSN, person.Name, person.Address, person.Age);
             }
         }
-        
     }
 }
