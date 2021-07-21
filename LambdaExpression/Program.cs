@@ -13,6 +13,7 @@ namespace LambdaExpression
             RetrieveTopTwoLessThanSixty(list);
             RetrieveTeenageRecords(list);
             FindAverage(list);
+            SearchingName(list);
         }
 
         /// <summary>
@@ -80,6 +81,22 @@ namespace LambdaExpression
         { 
             var result = list.Average(x=>x.Age);
             Console.WriteLine("\nThe Average of age in the list : "+result);
+        }
+
+        /// <summary>
+        /// UC 5 - Searching a specific name
+        /// </summary>
+        /// <param name="list"></param>
+        public static void SearchingName(List<Person> list)
+        {
+            Console.WriteLine("Enter a name to search : ");
+            string name = Console.ReadLine();
+            var person = list.Find(x=>x.Name.Equals(name));
+            if(person!=null)
+                Console.WriteLine("SSN : {0}\tName : {1}\tAddress : {2}\tAge : {3}", person.SSN, person.Name, person.Address, person.Age);
+            else
+                Console.WriteLine("{0} does not exists",name);
+                
         }
     }
 }
