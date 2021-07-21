@@ -10,6 +10,7 @@ namespace LambdaExpression
         {
             List<Person> list = new List<Person>();
             AddingPersonDetails(list);
+            RetrieveTopTwoLessThanSixty(list);
         }
 
         /// <summary>
@@ -24,6 +25,20 @@ namespace LambdaExpression
             list.Add(new Person() { SSN = 4, Name = "Sushmitha", Address = "Bengaluru", Age = 33 });
             list.Add(new Person() { SSN = 5, Name = "Snehitha", Address = "Chennai", Age = 60 });
             foreach (Person person in list)
+            {
+                Console.WriteLine("SSN : {0}\tName : {1}\tAddress : {2}\tAge : {3}", person.SSN, person.Name, person.Address, person.Age);
+            }
+        }
+
+        /// <summary>
+        /// UC 2 - Retrieving top 2 records from the list whose age is lessthan sixty
+        /// </summary>
+        /// <param name="list"></param>
+        public static void RetrieveTopTwoLessThanSixty(List<Person> list)
+        {
+            Console.WriteLine("\nRetrieving the top 2 records from the list whose age is less than sixty");
+            List<Person> result = list.FindAll(p => p.Age < 60).OrderBy(x => x.Age).Take(2).ToList();
+            foreach (Person person in result)
             {
                 Console.WriteLine("SSN : {0}\tName : {1}\tAddress : {2}\tAge : {3}", person.SSN, person.Name, person.Address, person.Age);
             }
