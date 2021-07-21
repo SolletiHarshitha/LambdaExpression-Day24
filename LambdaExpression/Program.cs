@@ -36,8 +36,20 @@ namespace LambdaExpression
         /// <param name="list"></param>
         public static void RetrieveTopTwoLessThanSixty(List<Person> list)
         {
+            Console.WriteLine("\nDisplay records if age less than sixty");
+            var find = list.FindAll(p => p.Age < 60);
+            foreach (Person person in find)
+            {
+                Console.WriteLine("SSN : {0}\tName : {1}\tAddress : {2}\tAge : {3}", person.SSN, person.Name, person.Address, person.Age);
+            }
+            Console.WriteLine("\nDispaly sorted records");
+            var order = find.OrderBy(x => x.Age);
+            foreach (Person person in order)
+            {
+                Console.WriteLine("SSN : {0}\tName : {1}\tAddress : {2}\tAge : {3}", person.SSN, person.Name, person.Address, person.Age);
+            }
             Console.WriteLine("\nRetrieving the top 2 records from the list whose age is less than sixty");
-            List<Person> result = list.FindAll(p => p.Age < 60).OrderBy(x => x.Age).Take(2).ToList();
+            var result = order.Take(2);
             foreach (Person person in result)
             {
                 Console.WriteLine("SSN : {0}\tName : {1}\tAddress : {2}\tAge : {3}", person.SSN, person.Name, person.Address, person.Age);
