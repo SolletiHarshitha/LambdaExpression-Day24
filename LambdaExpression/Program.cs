@@ -64,7 +64,7 @@ namespace LambdaExpression
         public static void RetrieveTeenageRecords(List<Person> list)
         {
             Console.WriteLine("\nDisplay records from the list whose age is between 13 to 18");
-            var result = list.FindAll(p => p.Age > 13 && p.Age < 18).OrderBy(x=>x.Age).ToList();
+            var result = list.FindAll(p => p.Age > 13 && p.Age < 18);
             foreach (Person person in result)
             {
                 Console.WriteLine("SSN : {0}\tName : {1}\tAddress : {2}\tAge : {3}", person.SSN, person.Name, person.Address, person.Age);
