@@ -12,6 +12,7 @@ namespace LambdaExpression
             AddingPersonDetails(list);
             RetrieveTopTwoLessThanSixty(list);
             RetrieveTeenageRecords(list);
+            FindAverage(list);
         }
 
         /// <summary>
@@ -69,6 +70,16 @@ namespace LambdaExpression
             {
                 Console.WriteLine("SSN : {0}\tName : {1}\tAddress : {2}\tAge : {3}", person.SSN, person.Name, person.Address, person.Age);
             }
+        }
+
+        /// <summary>
+        /// UC 4 - Find avrage age in the list
+        /// </summary>
+        /// <param name="list"></param>
+        public static void FindAverage(List<Person> list)
+        { 
+            var result = list.Average(x=>x.Age);
+            Console.WriteLine("\nThe Average of age in the list : "+result);
         }
     }
 }
