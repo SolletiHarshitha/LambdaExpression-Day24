@@ -15,6 +15,7 @@ namespace LambdaExpression
             FindAverage(list);
             SearchingName(list,"Satya");
             SkipRecord(list);
+            RemovePerson(list, "Sushmitha");
         }
 
         /// <summary>
@@ -115,6 +116,25 @@ namespace LambdaExpression
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        /// <summary>
+        /// UC 7 - Remove a specific person from the list
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="name"></param>
+        public static void RemovePerson(List<Person> list, string name)
+        {
+            Console.WriteLine("\nRemove a specific person");
+            var result = list.Find(p=>p.Name.Equals(name));
+            if (result != null)
+            {
+                if (list.Remove(result))
+                {
+                    Console.WriteLine("Successfully removed "+name);
+                }
+            }
+            Iterate(list);
         }
         public static void Iterate(List<Person> list)
         {
