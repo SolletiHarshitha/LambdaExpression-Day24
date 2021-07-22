@@ -57,10 +57,6 @@ namespace LambdaExpression
             Console.WriteLine("\nDisplay records from the list whose age is between 13 to 18");
             var result = list.FindAll(p => p.Age > 13 && p.Age < 18);
             Iterate(result);
-            /*foreach (Person person in result)
-            {
-                Console.WriteLine("SSN : {0}\tName : {1}\tAddress : {2}\tAge : {3}", person.SSN, person.Name, person.Address, person.Age);
-            }*/
         }
 
         /// <summary>
