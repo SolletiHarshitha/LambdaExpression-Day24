@@ -14,6 +14,7 @@ namespace LambdaExpression
             RetrieveTeenageRecords(list);
             FindAverage(list);
             SearchingName(list,"Satya");
+            SkipRecord(list);
         }
 
         /// <summary>
@@ -96,6 +97,28 @@ namespace LambdaExpression
                 Console.WriteLine(ex.Message);
             }
 
+        }
+
+        /// <summary>
+        /// UC 6 - Skip records if age less rthan sixty
+        /// </summary>
+        /// <param name="list"></param>
+        public static void SkipRecord(List<Person> list)
+        {
+            try
+            {
+                Console.WriteLine("\nSkip Record Age less than 60");
+                List<Person> result = list.FindAll(x => x.Age > 60).Skip(1).ToList();
+                Iterate(result);
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
         public static void Iterate(List<Person> list)
         {
