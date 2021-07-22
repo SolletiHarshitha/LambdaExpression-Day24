@@ -96,7 +96,7 @@ namespace LambdaExpression
         }
 
         /// <summary>
-        /// UC 6 - Skip records if age less rthan sixty
+        /// UC 6 - Skip records if age less than sixty
         /// </summary>
         /// <param name="list"></param>
         public static void SkipRecord(List<Person> list)
